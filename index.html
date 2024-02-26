@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himlakroppar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <section class="header__heading">
+            <h1>SOLSYSTEMET</h1>
+            <h2>SOLARIS</h2>
+        </section>
+        <nav class="header__search">
+            <input type="text" id="search" placeholder="Sök himlakropp">
+            <button class="btn" id="searchBtn">Sök</button>
+        </nav>
+    </header>
+    <main>
+        <div class="planets-container">
+        <div id="SolenInfo" class="planet-info" data-planet="Solen"></div>
+        <div id="MerkuriusInfo" class="planet-info" data-planet="Merkurius"></div>
+        <div id="VenusInfo" class="planet-info" data-planet="Venus"></div>
+        <div id="JordenInfo" class="planet-info" data-planet="Jorden"></div>
+        <div id="MarsInfo" class="planet-info" data-planet="Mars"></div>
+        <div id="JupiterInfo" class="planet-info" data-planet="Jupiter"></div>
+        <div id="SaturnusInfo" class="planet-info" data-planet="Saturnus"></div>
+        <div id="UranusInfo" class="planet-info" data-planet="Uranus"></div>
+        <div id="NeptunusInfo" class="planet-info" data-planet="Neptunus"></div>
+        </div> 
+    </main> 
+    <section id="star-sky"></section>       
+    <script src="main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Variabler */
+:root {
+    --main-bg-color: #0C164D;
+    --secondary-bg-color: #190B22;
+    --accent-color: #ffcc00;
+    --btn-bg-color: rgba(25, 11, 34, .8);
+}
+
+/* Body */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, sans-serif;
+    background: linear-gradient(90deg, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
+    min-height: 100vh; 
+}
+/* Blinkande stjärnor */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2px; 
+    height: 2px; 
+    animation: blink 1s infinite; /* animering som blinkar varje sekund oändligt */
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
+@keyframes blink {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
+
+/* Headings */
+h1 {
+    font-weight: 400px;
+    font-size: 3rem;
+    letter-spacing: 0.09em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: right;
+}
+h2, input{
+    font-weight: 400px;
+    letter-spacing: 0.6em;
+    color: var(--accent-color);
+    text-align: end;
+    margin-top: 1rem;
+}
+h3{
+    font-size: 12px;
+    letter-spacing: 0.6em;
+    color: var(--accent-color);
+    margin-top: 1rem;  
+}
+p{
+    margin-top: 15px;
+    font-size: 14px;
+}
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 40vh;
+}
+.header__heading * {
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.header__search label,
+.header__search input {
+    width: 15rem;
+    backdrop-filter: brightness(0.25);
+    padding: .50rem;
+    text-align: center;
+    margin-bottom: 150px;
+}
+.btn {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: transparent;
+    border: 1px solid #ffcc00;
+    box-shadow: 1px 1px 7px 3px #464544a4, -1px -1px 7px 3px #63625da4;
+    color: var(--accent-color);
+    letter-spacing: 0.6em;
+    transition: all .5s ease;
+}
+/* Planets Container */
+.planets-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 290px;
+    gap: 2rem;
+}
+
+.planet-info {
+    border-radius: 50%;
+    padding: 20px;
+    margin: 25px;
+    cursor: pointer; 
+    transition: transform 0.3s ease; /* Gör övergången smidig när du klickar på dem */
+}
+
+/* Specific Planet Styles */
+#SolenInfo {
+    background-color: #ffcc00;
+    width: 50vw; /* Bredden på halva skärmen */
+    height: 100vh; /* Höjden på hela skärmen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Se till att solen ligger över andra element */
+    transition: 1s;
+    box-shadow: 0 0 30px #f15619a4;
+    margin-left: -600px; /* Justera detta värde för att flytta solen till vänster */
+    margin-right: 60px;
+}
+#SolenInfo:hover::after {
+    content: "Solen"; 
+    position: absolute;
+    top: 100px; 
+    right: -20%; 
+    transform: translateX(50%); 
+    background-color: transparent;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-size: 12px; 
+    color: #726f6f; 
+    pointer-events: none; 
+    z-index: 2; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+#SolenInfo:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #fff7b7a1, #ffd90083, #ffb30093);
+    box-shadow: 0 0 30px #c05126a4;
+}
+
+#SolenInfo:hover{
+    transform: scale(1.1);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #fff7b7a1, #ffd90083, #ffb30093);
+    box-shadow: 0 0 30px #c05126a4;
+}
+
+#SolenInfo:hover::after {
+    opacity: 1; /* Visa namnet när du hovrar över solen */
+}
+
+#MerkuriusInfo {
+    background-color: #888888;
+    width: 20px;
+    height: 30px;
+    transition: 1s;
+    box-shadow: 0 0 10px #807979;
+    margin-top: 120px;
+}
+
+#MerkuriusInfo:hover {
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #e0e0e0, #383737);
+    box-shadow: 0 0 10px #EDEDED;
+}
+
+#VenusInfo {
+    background-color: #E7CDCD;
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+    box-shadow: 0 0 10px #EDEDED;
+    margin-top: 120px;
+}
+
+#VenusInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #E7CDCD, #977c7c);
+    box-shadow: 0 0 10px #f3afaf;
+}
+
+#JordenInfo {
+    background-color: #428ED4;
+    width: 65px;
+    height: 65px;
+    transition: 1s;
+    box-shadow: 0 0 10px #125ecf;
+    margin-top: 120px;
+}
+
+#JordenInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #3a8cda, #1f4c75);
+    box-shadow: 0 0 10px #01315e;
+}
+
+#MarsInfo {
+    background-color: #EF5F5F;
+    width: 35px;
+    height: 35px;
+    transition: 1s;
+    box-shadow: 0 0 10px #8b0a0a;
+    margin-top: 130px;
+}
+
+#MarsInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #f1c5c5, #db2424);
+    box-shadow: 0 0 10px #681414;
+}
+
+
+#JupiterInfo {
+    background-color: #E29468;
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+    box-shadow: 0 0 20px #b1603a;
+    margin-top: 40px;
+}
+
+#JupiterInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #f0c5a5, #b85b26);
+    box-shadow: 0 0 10px #7c311b;
+}
+
+#SaturnusInfo {
+    background-color: #C7AA72;
+    width: 160px;
+    height: 160px;
+    transition: 1s;
+    position: relative;
+    box-shadow: 0 0 10px #f5a952;
+    margin-top: 60px;
+}
+
+#SaturnusInfo::before {
+    content: '';
+    position: absolute;
+    width: 200px; 
+    height: 0px; 
+    border: 2px solid #EDEDED;
+    border-radius: 50%;
+    top: 80px;
+    left: -22px;
+    box-shadow: 0 0 10px #EDEDED;
+    transform: rotate(-30deg);
+}
+
+#SaturnusInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #d7be8b, #8d7138);
+    box-shadow: 0 0 10px #EDEDED;
+}
+
+#UranusInfo {
+    background-color: #C9D4F1;
+    width: 70px;
+    height: 70px;
+    transition: 1s;
+    box-shadow: 0 0 10px #EDEDED;
+    margin-top: 100px;
+}
+
+#UranusInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #d6e1f6, #839ee4);
+    box-shadow: 0 0 10px #EDEDED;
+}
+
+#NeptunusInfo {
+    background-color: #7A91A7;
+    width: 60px;
+    height: 60px;
+    transition: 1s;
+    box-shadow: 0 0 10px #518bc2;
+    margin-top: 100px;
+}
+
+#NeptunusInfo:hover{
+    transform: scale(1.3);
+    z-index: 2;
+    background-image: linear-gradient(135deg, #9eb3c5, #4c5a68);
+    box-shadow: 0 0 10px #EDEDED;
+}
+
+.planet-info:hover::after {
+    content: attr(data-planet); /* Visar planetens namn */
+    position: absolute;
+    bottom: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: transparent;
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-size: 10px; 
+    color: #726f6f; 
+    pointer-events: none; 
+    margin-bottom: 3px;
+    z-index: 3;
+}
+
+/* Popup Container */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #0C164D 0%, #190B22 100%);    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Se till att popup-fönstret visas över allt annat */
+    color: #fff; 
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Popup Content */
+.popup-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+/* Styla paragrafen för månarnas namn */
+.popup-content .moon-names {
+    white-space: pre-wrap; /* Tillåt att texten bryts till fler rader */
+    word-wrap: break-word; /* Bryt ord som är längre än bredden på containern */
+}
+
+
+/* Close Button */
+.popup-container .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #c7c3c3;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
